@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<div>
+  <strong>Repositories:</strong>
+  <ul>
+    <% @user.repositories.each do |repo| %>
+      <li> 
+        <p><strong>Name: </strong><%= "#{repo.name}"%></p>
+        <p><strong>Language: </strong><%= "#{repo.language}"%></p>
+        <p><strong>Watchers count: </strong><%= "#{repo.watchers}"%></p>
+        <p><strong>Description: </strong><%= "#{repo.description}"%></p>
+      </li>
+      <br/>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to 'Back', users_path %>
